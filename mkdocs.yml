@@ -1,1 +1,41 @@
-site_name: My Docs
+site_name: Nicolas Beauchet - Portfolio BTS SIO SISR
+site_url: https://nicolas-beauchet.github.io/portfolio-bts-sio/
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+
+nav:
+  - Accueil: index.md
+  - Tableau de Synthèse: synthese.md
+  - Réalisations SISR:
+      - Bloc 1 - Support & Services: bloc1.md
+      - Bloc 2 - Administration Systèmes & Réseaux: bloc2.md
+  - Veille Technologique:
+      - Démarche & Outils: veille-outils.md
+      - Sujet - Zero Trust: veille-sujet.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
