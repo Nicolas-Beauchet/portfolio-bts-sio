@@ -877,7 +877,7 @@
 <td style="text-align: center;">10</td>
 <td style="text-align: center;">192.168.10.0/24</td>
 <td style="text-align: center;">192.168.10.254</td>
-<td style="text-align: left;">Accès restreint (SSH, RDP, Webmin)</td>
+<td style="text-align: left;">Accès restreint (SSH, RDP)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Serveurs (DMZ / Prod)</strong></td>
@@ -900,7 +900,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Configuration Réseau &amp; Interfaces</label><label for="__tabbed_1_2">Filtrage &amp; Sécurisation (Pare-feu)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Exemple d'attribution d'adresses statiques sous Linux (/etc/network/interfaces)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Attribution IP statique sous Linux (/etc/network/interfaces)</span>
 auto<span class="w"> </span>ens18
 iface<span class="w"> </span>ens18<span class="w"> </span>inet<span class="w"> </span>static
 <span class="w">    </span>address<span class="w"> </span><span class="m">192</span>.168.10.10/24
@@ -924,7 +924,7 @@ sudo<span class="w"> </span>nft<span class="w"> </span>add<span class="w"> </spa
 <div class="admonition tip">
 <p class="admonition-title">Protocole de Test</p>
 <ul>
-<li><strong>Test de connectivité :</strong> Validation du routage inter-VLAN via tests <code>ping</code> et analyse des requêtes ICMP sous Wireshark.</li>
+<li><strong>Test de connectivité :</strong> Validation du routage inter-VLAN via <code>ping</code> et analyse des trames ICMP sous Wireshark.</li>
 <li><strong>Test de sécurité :</strong> Scan de ports avec <code>nmap</code> depuis le VLAN utilisateurs pour attester du blocage des ports d'administration.</li>
 <li><strong>Résultat :</strong> Flux autorisés opérationnels, accès non autorisés bloqués et tracés dans les logs systèmes.</li>
 </ul>
