@@ -25,7 +25,7 @@
 
 | Réseau / Rôle | VLAN ID | Plage Réseau | Passerelle | Objectif de Sécurité |
 | :--- | :---: | :---: | :---: | :--- |
-| **Administration** | 10 | 192.168.10.0/24 | 192.168.10.254 | Accès restreint (SSH, RDP, Webmin) |
+| **Administration** | 10 | 192.168.10.0/24 | 192.168.10.254 | Accès restreint (SSH, RDP) |
 | **Serveurs (DMZ / Prod)** | 20 | 192.168.20.0/24 | 192.168.20.254 | Services isolés, ports stricts |
 | **Utilisateurs / Postes** | 30 | 192.168.30.0/24 | 192.168.30.254 | Navigation filtrée, isolation des flux |
 
@@ -35,7 +35,7 @@
 
 === "Configuration Réseau & Interfaces"
     ```bash
-    # Exemple d'attribution d'adresses statiques sous Linux (/etc/network/interfaces)
+    # Attribution IP statique sous Linux (/etc/network/interfaces)
     auto ens18
     iface ens18 inet static
         address 192.168.10.10/24
@@ -57,6 +57,6 @@
 
 ### 5. Cahier de Recette & Validation
 !!! tip "Protocole de Test"
-    - **Test de connectivité :** Validation du routage inter-VLAN via tests `ping` et analyse des requêtes ICMP sous Wireshark.
+    - **Test de connectivité :** Validation du routage inter-VLAN via `ping` et analyse des trames ICMP sous Wireshark.
     - **Test de sécurité :** Scan de ports avec `nmap` depuis le VLAN utilisateurs pour attester du blocage des ports d'administration.
     - **Résultat :** Flux autorisés opérationnels, accès non autorisés bloqués et tracés dans les logs systèmes.
